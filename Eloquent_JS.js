@@ -46,3 +46,123 @@ const hummus = function (factor){
 };
 
 console.log(hummus(2));
+
+//Declaration Notation 
+
+function square1 (x){
+	return x*x ;
+}
+
+
+console.log("The future says:", future());
+
+function future (){
+	return "You'll have flying cars" ;
+}
+
+const power1 = (base, exponent) => {
+	let result = 1;
+	for (count = 0; count < exponent; count++){
+		result = result * base ;
+	}
+	return result; 
+}
+
+console.log( power1 (2,10));
+
+const horn = () => {
+	console.log("Toot");
+};
+
+//console.log(horn ())
+
+// The call stack 
+const chicken = () => {
+	return egg();
+}
+
+const  egg = () => {
+	return chicken();
+}
+
+//console.log(chicken() + "came first");
+
+
+const square2= (x) => { return x*x }; 
+console.log(square2(3, false, "Happy"));
+
+function minus(a,b = 3){
+	if (b === undefined) return -a;
+	else return a-b;
+}
+
+console.log(minus(10));
+console.log(minus(10,3));
+
+function wrapValue(n){
+	let local =n;
+	return () => local;
+}
+
+let wrap1 = wrapValue(1);
+let wrap2 = wrapValue(2);
+console.log(wrap1());
+console.log(wrap2());
+
+// clouser 
+
+const multple = function (x){
+	return y => x*y;
+}
+
+let multple1 = multple(4);
+
+console.log(multple1(2));
+
+// recursive 
+
+const power2 = function (base, exponent){
+	if (exponent== 0){
+		
+		return 1;
+	}
+	else return base * power2 (base, exponent-1);
+};
+
+console.log( power2 (2,4));
+
+const findsolution = function (traget ){
+	function find (current, history){
+		if (current == traget){
+			return history;
+		}
+		else if ( current > traget){
+			return false ;
+		}
+		else {return find (current + 5, `(${history} + 5)`) || find (current *3 , `${history} *3`);}
+	}
+	return find (1, '1');
+};
+
+console.log(findsolution(24));
+
+// Growing Function 
+
+function padding (x){
+	x = String(x)
+	while (x.length < 3){
+		x = '0' + x;
+	}
+	return x;
+
+};
+
+console.log(padding(3));
+
+function farm (cow, chicken) {
+	console.log(padding(cow), "cow");
+	console.log(padding(chicken), "chicken");
+};
+
+farm(7,15);
+
