@@ -166,3 +166,42 @@ function farm (cow, chicken) {
 
 farm(7,15);
 
+// exercise 1
+function min(num1, num2){
+	if (num1 < num1){
+		return num1;
+	}
+	else return num2;
+};
+
+
+console.log(min(0,-10));
+
+// recursion
+
+function iseven (num){
+	if (num == 0 ) return true ;
+	else if (num == 1 ) return false ;
+	else if (num < 0) return iseven(-num);
+	else return iseven(num -1);
+}
+
+console.log(iseven (11));
+
+// Bean counting 
+
+text = 'india'
+console.log (text.length-1);
+
+
+function countChar (text, char){
+	count = 0;
+	for(i=0; i < text.length ; i++){
+		if (text [i] == char) {
+			count += 1 ;
+		}
+	}
+	return count ;
+}
+
+console.log(countChar("kakkerlak", "k"));
